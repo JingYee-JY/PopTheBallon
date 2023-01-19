@@ -1,10 +1,13 @@
 const shareButton = document.getElementById('share')
 
+const canvas = document.getElementById('screenshot')
+
 const a = navigator.mediaDevices.getDisplayMedia;
 
-const takeScreenshot = async() => {
+navigator.mediaDevices.getUserMedia()
+        .then((mediaStream) => {
 
-    videoMediaStream = mediaStream;
+            videoMediaStream = mediaStream;
             
             
     video.srcObject = mediaStream;
@@ -16,8 +19,6 @@ const takeScreenshot = async() => {
              
     video.onplay = function () {
         mediaInstance = this;
-
-        const canvas = document.getElementById('screenshot')
         
         canvas.height = window.innerHeight;
         canvas.width = window.innerWidth;
@@ -51,7 +52,11 @@ const takeScreenshot = async() => {
 
                   
                     })();
-    }
+            }
+        }
+    })
+
+const takeScreenshot = async() => {
 
     var myCanvas = canvas.cloneNode();
     var ctx = myCanvas.getContext('2d');
@@ -62,8 +67,7 @@ const takeScreenshot = async() => {
     
     console.log(canvas.toDataURL('image/jpeg', 0.8))
 
-    shareCanvasAsImage(img, "test");
-}
+    shareCanvasAsImage(image, "test");
 }
 
 async function shareCanvasAsImage(base64) {
