@@ -4,37 +4,58 @@ const a = navigator.mediaDevices.getDisplayMedia;
 
 const takeScreenshot = async() => {
 
+    video.play();
     shareButton.classList.add("hidden");
 
-    const stream = await navigator.mediaDevices.getDisplayMedia({
-        video : {mediaDevices:'screen'}
-    });
+             
+    video.onplay = function () {
+        mediaInstance = this;
 
-   
+        const canvas = document.getElementById('screenshot')
+        
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
 
-    const track = stream.getVideoTracks()[0];
+        const context = canvas.getContext('2d');
 
-    const image = new ImageCapture(track);
+        (function loop ()
+                    {
 
-    const bitmap = await image.grabFrame();
 
-    track.stop();
 
-    const canvas = document.getElementById('screenshot')
 
-    canvas.width = bitmap.width;
-    canvas.height = bitmap.height;
+            
 
-    const context = canvas.getContext('2d');
+                        
 
-    shareButton.classList.remove("hidden");
+                        ctx.drawImage(mediaInstance, 0, 0, window.innerWidth, window.innerHeight);
+                        
+                        ctx.setTransform(-1,0,0,1,canvas.width,0)
+                  
+                 
+                        timeout = setTimeout(loop, 1000 / 60);
+                    
+                           
 
-    context.drawImage(bitmap,0,0,790,bitmap.height/2)
+                        /*ctx.fillRect(25, 25, 100, 100);
+                        ctx.clearRect(45, 45, 60, 60);
+                        ctx.strokeRect(50, 50, 50, 50);*/
 
-    const img = canvas.toDataURL('image/jpeg', 0.8);
+                        ctx.drawImage(image, -(x - 50), y - 50, imageWidth, imageHeight);
+
+                  
+                    })();
+    }
+
+    var myCanvas = canvas.cloneNode();
+    var ctx = myCanvas.getContext('2d');
+
+    var image = new Image();
     
-    console.log(img)
-
+    image.src = canvas.toDataURL('image/jpeg', 0.8);
+    
+    console.log(canvas.toDataURL('image/jpeg', 0.8))
+    
     shareCanvasAsImage(img, "test");
 }
 
