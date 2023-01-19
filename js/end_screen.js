@@ -2,9 +2,7 @@ const shareButton = document.getElementById('share')
 
 const canvas = document.getElementById('screenshot')
 
-const a = navigator.mediaDevices.getDisplayMedia;
-
-navigator.mediaDevices.getUserMedia()
+navigator.mediaDevices.getDisplayMedia()
         .then((mediaStream) => {
 
             videoMediaStream = mediaStream;
