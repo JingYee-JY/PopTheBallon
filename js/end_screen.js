@@ -27,9 +27,9 @@ const takeScreenshot = async() => {
 
     const context = canvas.getContext('2d');
 
-    context.drawImage(bitmap,0,0,790,bitmap.height/2)
-
     shareButton.classList.remove("hidden");
+
+    context.drawImage(bitmap,0,0,790,bitmap.height/2)
 
     const img = canvas.toDataURL();
     
