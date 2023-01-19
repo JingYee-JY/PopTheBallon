@@ -31,20 +31,54 @@ const takeScreenshot = async() => {
 
     context.drawImage(bitmap,0,0,790,bitmap.height/2)
 
-    const img = canvas.toDataURL();
+    const img = canvas.toDataURL('image/jpeg', 0.8);
     
-    console.log(canvas.toDataURL())
+    console.log(img)
 
-    const res = await fetch(img);
-    const buff = await res.arrayBuffer();
+    shareCanvasAsImage(img, "test");
+}
 
-    const file = [
-        new file([buff, 'photo_${new Date()}.jpg'], {
-            tpye:'image/jpeg'
+async function shareCanvasAsImage(base64) {
+
+
+    fetch(base64)
+        .then(function(response) {
+            return response.blob()
         })
-    ];
+        .then(function(blob) {
 
-    return file;
+
+
+            var file = new File([blob], "new_picture.png", {type: blob.type});
+            var filesArray = [file];
+            var shareData = { files: filesArray};
+
+            console.log(URL.createObjectURL(blob))
+
+            if (navigator.canShare && navigator.canShare(shareData)) {
+
+                // Adding title afterwards as navigator.canShare just
+                // takes files as input
+
+
+                navigator.share(shareData)
+                    .then(() => {
+                        
+                        
+                        console.log('Share was successful.')
+                    }
+                    
+                    
+                    
+                    
+                    )
+                    .catch((error) => console.log('Sharing failed', error));
+
+            } else {
+                console.log("Your system doesn't support sharing files.");
+            }
+
+        });
 }
 
 
