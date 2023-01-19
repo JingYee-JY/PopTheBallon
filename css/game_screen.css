@@ -16,6 +16,12 @@
     font-size: 20px;
 }
 
+#help{
+    position: absolute;
+    width: 15%;
+    pointer-events: none;
+}
+
 #balloon{
     width: 370px;
     height: 370px;

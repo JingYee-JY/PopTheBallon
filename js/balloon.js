@@ -1,5 +1,6 @@
 const endScreen = document.getElementById('end_screen');
 const gamePage = document.getElementById('game_screen');
+const help = document.getElementById('help');
 
 var d = document.getElementById('balloon');
 var cStyle = getComputedStyle(d);
@@ -79,6 +80,7 @@ function increaseSize(){
         stop();        
     }else{
         counter ++;
+        help.classList.add("hide")
         document.getElementById("ball").style.width = size + 'px';
         size = size + 10; 
         playInflate();
