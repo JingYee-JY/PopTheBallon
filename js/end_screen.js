@@ -2,7 +2,15 @@ const shareButton = document.getElementById('share')
 
 const canvas = document.getElementById('screenshot')
 
-navigator.mediaDevices.getDisplayMedia()
+var constraints = {
+
+    video: {     width: 1280, height: 720,
+    }
+};
+
+const takeScreenshot = async() => {
+
+    navigator.mediaDevices.getUserMedia(constraints)
         .then((mediaStream) => {
 
             videoMediaStream = mediaStream;
@@ -53,8 +61,6 @@ navigator.mediaDevices.getDisplayMedia()
             }
         }
     })
-
-const takeScreenshot = async() => {
 
     var myCanvas = canvas.cloneNode();
     var ctx = myCanvas.getContext('2d');
