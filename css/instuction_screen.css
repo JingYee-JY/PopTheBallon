@@ -1,0 +1,45 @@
+#instuctions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    gap: 10px;
+}
+
+#title{
+    width: 50%;
+    background-color: white;
+    box-shadow: 10px 10px #FFCF84;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+h1{
+    font-size: 25px;
+}
+
+p{
+    font-size: 20px;
+}
+
+#instructions_details{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    width: 85%;
+    text-align: center;
+}
+
+#play_button{
+    width: 90%;
+    border-radius: 10px;
+    padding: 15px;
+    border: 0px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 20px;
+    color: var(--play-button-text);
+    background-color: var(--play-button);
+}

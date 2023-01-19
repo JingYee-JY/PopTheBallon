@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop the Ballon</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/splash_screen.css">
+</head>
+<body style="display:none;">
+    
+    <div id="splash_screen" w3-include-html="./pages/splash_screen.html"></div>
+    <div id="instruction_screen" w3-include-html="./pages/instruction_screen.html" class="starting"></div>
+    <div id="game_screen" w3-include-html="./pages/game_screen.html" class="hide"></div>
+    <div id="end_screen" w3-include-html="./pages/end_screen.html" class="hide"></div>
+    
+    <script src="./js/w3.js"></script>
+    <script>
+        //to bring in other HTML on the fly into this page
+        w3.includeHTML();
+      </script>
+
+    <script src="./js/splash_screen.js"></script>
+    <script src="./js/instruction_screen.js"></script>
+    <script src="../js/balloon.js"></script>
+    <script src="../js/confetti.js"></script>
+    <script src="./js/end_screen.js"></script>
+</body>
+</html>

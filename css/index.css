@@ -1,0 +1,70 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+
+    background-color: var(--bg-blue);
+}
+
+:root {
+    --bg-blue: #C1DDFF;
+    --play-button:#FFAD2D;
+    --play-button-text:#4E2F00;
+    --button-shadow:rgb(0,0,0,0.1)
+}
+
+.starting {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.hide{
+    display: none !important;
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s linear;
+}
+
+#splash_screen {
+
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+
+    background-color: var(--bg-blue);
+
+
+}
+
+#instruction_screen,
+#game_screen,
+#end_screen{
+
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/instruction_screen/background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#game_screen{
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 40px;
+}
+
