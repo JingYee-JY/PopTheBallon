@@ -64,6 +64,7 @@ const takeScreenshot = async() => {
 
     shareCanvasAsImage(img, "test");
 }
+}
 
 async function shareCanvasAsImage(base64) {
 
