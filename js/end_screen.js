@@ -2,6 +2,21 @@ const shareButton = document.getElementById('share')
 
 const canvas = document.getElementById('screenshot')
 
+const quote = document.getElementById('quote')
+
+let quotes = ['./img/end_screen/quote.png',
+            './img/end_screen/quote1.png',
+            './img/end_screen/quote2.png',]
+
+randomiseQuote()
+
+function randomiseQuote(){
+
+    randomQutoIndex = Math.floor(Math.random() * quotes.length)
+
+    quote.src = quotes[randomQutoIndex]
+}
+
 var constraints = {
 
     video: {     width: 1280, height: 720,
