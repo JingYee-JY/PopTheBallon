@@ -23,70 +23,41 @@ var constraints = {
     }
 };
 
-const takeScreenshot = async() => {
+const takeScreenshot = async () => {
 
-    navigator.mediaDevices.getUserMedia(constraints)
-        .then((mediaStream) => {
+    try{
+        //asking permission to use a media input to record current tab
+        const stream = await navigator.mediaDevices.getDisplayMedia({preferCurrentTab:true});
+        const video = document.createElement("video");
 
-            videoMediaStream = mediaStream;
+        video.addEventListener("loadedmetadata", () =>{
+            const canvas = document.createElement("canvas");
+            const ctx = canvas.getContext("2d")
+
+            //passing video width & height as canvas width & height
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight
+
+            //playing the video so the drawn image won't be black or blank
+            video.play()
+
+            //drawing an image from captured video stream
+            ctx.drawImage(video,0,0,canvas.width, canvas.height)
             
-            
-    video.srcObject = mediaStream;
-    video.onloadedmetadata = () => {
-
-    video.play();
-    shareButton.classList.add("hidden");
-
-             
-    video.onplay = function () {
-        mediaInstance = this;
-        
-        canvas.height = window.innerHeight;
-        canvas.width = window.innerWidth;
-
-        const context = canvas.getContext('2d');
-
-        (function loop ()
-                    {
-
-
-
-
-            
-
-                        
-
-                        ctx.drawImage(mediaInstance, 0, 0, window.innerWidth, window.innerHeight);
-                        
-                        ctx.setTransform(-1,0,0,1,canvas.width,0)
-                  
-                 
-                        timeout = setTimeout(loop, 1000 / 60);
-                    
-                           
-
-                        /*ctx.fillRect(25, 25, 100, 100);
-                        ctx.clearRect(45, 45, 60, 60);
-                        ctx.strokeRect(50, 50, 50, 50);*/
-
-                        ctx.drawImage(image, -(x - 50), y - 50, imageWidth, imageHeight);
-
-                  
-                    })();
-            }
-        }
-    })
-
-    var myCanvas = canvas.cloneNode();
-    var ctx = myCanvas.getContext('2d');
-
-    var image = new Image();
+            //terminating first video track of the stream
+            stream.getVideoTracks()[0].stop();
+        })
+        //passing capture stream data as video source object
+        video.srcObject = stream;
+        console.log(stream)
+    } catch{
+        console.log("error")
+    }
     
-    image.src = canvas.toDataURL('image/jpeg', 0.8);
-    
+    url = canvas.toDataURL('image/jpeg', 0.8);
     console.log(canvas.toDataURL('image/jpeg', 0.8))
 
-    shareCanvasAsImage(image, "test");
+    shareCanvasAsImage(url, "test");
 }
 
 async function shareCanvasAsImage(base64) {
