@@ -26,6 +26,9 @@ var constraints = {
 const takeScreenshot = async () => {
 
     try{
+        //hide share button
+        shareButton.classList.add("hidden")
+
         //asking permission to use a media input to record current tab
         const stream = await navigator.mediaDevices.getDisplayMedia({preferCurrentTab:true});
         const video = document.createElement("video");
@@ -49,6 +52,9 @@ const takeScreenshot = async () => {
 
             //sharing image
             shareCanvasAsImage(canvas.toDataURL('image/jpeg', 1), "test");
+
+            //show share button when done
+            shareButton.classList.remove("hidden")
         })
         //passing capture stream data as video source object
         video.srcObject = stream;
