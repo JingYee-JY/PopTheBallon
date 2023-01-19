@@ -4,6 +4,12 @@ const a = navigator.mediaDevices.getDisplayMedia;
 
 const takeScreenshot = async() => {
 
+    videoMediaStream = mediaStream;
+            
+            
+    video.srcObject = mediaStream;
+    video.onloadedmetadata = () => {
+
     video.play();
     shareButton.classList.add("hidden");
 
@@ -55,7 +61,7 @@ const takeScreenshot = async() => {
     image.src = canvas.toDataURL('image/jpeg', 0.8);
     
     console.log(canvas.toDataURL('image/jpeg', 0.8))
-    
+
     shareCanvasAsImage(img, "test");
 }
 
