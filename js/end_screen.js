@@ -7,7 +7,7 @@ const takeScreenshot = async() => {
     shareButton.classList.add("hidden");
 
     const stream = await navigator.mediaDevices.getDisplayMedia({
-        video : {mediaDevices:'scree'}
+        video : {mediaDevices:'screen'}
     });
 
    
