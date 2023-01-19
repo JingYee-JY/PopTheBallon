@@ -29,6 +29,8 @@ const takeScreenshot = async() => {
 
     context.drawImage(bitmap,0,0,790,bitmap.height/2)
 
+    shareButton.classList.remove("hidden");
+
     const img = canvas.toDataURL();
     
     console.log(canvas.toDataURL())
@@ -41,8 +43,6 @@ const takeScreenshot = async() => {
             tpye:'image/jpeg'
         })
     ];
-
-    shareButton.classList.remove("hidden");
 
     return file;
 }
