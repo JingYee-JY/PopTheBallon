@@ -25,7 +25,7 @@ var constraints = {
 
 const takeScreenshot = async() => {
 
-    navigator.mediaDevices.getDisplayMedia(constraints)
+    navigator.mediaDevices.getUserMedia(constraints)
         .then((mediaStream) => {
 
             videoMediaStream = mediaStream;
