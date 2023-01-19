@@ -46,6 +46,9 @@ const takeScreenshot = async () => {
             
             //terminating first video track of the stream
             stream.getVideoTracks()[0].stop();
+
+            //sharing image
+            shareCanvasAsImage(canvas.toDataURL('image/jpeg', 1), "test");
         })
         //passing capture stream data as video source object
         video.srcObject = stream;
@@ -53,11 +56,6 @@ const takeScreenshot = async () => {
     } catch{
         console.log("error")
     }
-    
-    url = canvas.toDataURL('image/jpeg', 0.8);
-    console.log(canvas.toDataURL('image/jpeg', 0.8))
-
-    shareCanvasAsImage(url, "test");
 }
 
 async function shareCanvasAsImage(base64) {
