@@ -1,6 +1,7 @@
 const endScreen = document.getElementById('end_screen');
 const gamePage = document.getElementById('game_screen');
 const help = document.getElementById('help');
+const quoteCard = document.getElementById('quote');
 
 var d = document.getElementById('balloon');
 var cStyle = getComputedStyle(d);
@@ -47,8 +48,9 @@ function stopPop(){
 
 //// card block show 
 //function on() {
-//    document.getElementById("cards").style.display = "block";
+//    document.getElementById("cards").classList.remove("hidden")
 //}
+
 ////card block hide 
 //function off() {
 //    document.getElementById("cards").style.display = "none";
@@ -75,8 +77,10 @@ function increaseSize(){
         const element = document.getElementById('ball')
         element.classList.add('animate__animated', 'animate__bounceOut');
         start();
-        endScreen.classList.remove("hide")
-        gamePage.classList.add("hide")
+        setTimeout(()=>{
+            endScreen.classList.remove("hide")
+            gamePage.classList.add("hide")
+        },1000)
         stop();        
     }else{
         counter ++;

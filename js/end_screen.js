@@ -17,51 +17,87 @@ function randomiseQuote(){
     quote.src = quotes[randomQutoIndex]
 }
 
-var constraints = {
+function generateScreenshot()
+{
 
-    video: {     width: 1280, height: 720,
+    
+    const myCanvas = document.createElement("canvas");
+  
+
+    let image = new Image();
+
+    image.src = './img/instruction_screen/background.png';
+
+    image.onload = function () {
+        
+        const ctx =  myCanvas.getContext("2d");
+        myCanvas.width = 1500;
+        myCanvas.height = 1492;
+
+
+        ctx.drawImage(image, 0, 0);
+
+        base64 = myCanvas.toDataURL('image/jpeg', 0.8);
+
+        var image2 = new Image();
+        image2.src = "./img/splash_screen/client.svg";
+
+        var image3 = new Image();
+        image3.src = quotes[randomQutoIndex];
+
+        image2.onload = function ()
+        {
+            myCanvas.style.height =
+                (myCanvas.height / 1.3) + "px";
+
+            myCanvas.style.width =
+                (myCanvas.width / 1.3) + "px";
+
+                console.log(myCanvas.style.height  + " WIEHEDTH")
+
+            //console.log(canvas.offsetHeight)
+            ctx.drawImage(image2,parseInt(ctx.canvas.style.width.replace("px", "")) /2 + 70, 30
+            , window.innerWidth /2,
+            window.innerHeight / 5);
+        }
+
+        image3.onload = function ()
+        {
+
+            myCanvas.style.height =
+                (myCanvas.height / 1.3) + "px";
+
+            myCanvas.style.width =
+                (myCanvas.width / 1.3) + "px";
+
+            console.log(myCanvas.style.height  + " WIEHEDTH")
+
+            //console.log(canvas.offsetHeight)
+            ctx.drawImage(image3, parseInt(ctx.canvas.style.width.replace("px", "")) /2.05, 0 + 10
+
+                , window.innerWidth/3.7,
+                window.innerHeight / 11);
+            // Convert canvas data to url
+
+
+
+            base64 = myCanvas.toDataURL('image/jpeg', 0.8);
+
+        }
+
+        //document.body.append(myCanvas);
+        console.log(myCanvas.toDataURL('image/jpeg', 0.8));
+
+        //shareCanvasAsImage(myCanvas.toDataURL('image/jpeg', 0.8));
+
+        base64 = myCanvas.toDataURL('image/jpeg', 0.8);
+
+        console.log("loaded")
+
+        shareCanvasAsImage(base64);
+
     }
-};
-
-const takeScreenshot = async () => {
-
-    try{
-        //hide share button
-        shareButton.classList.add("hidden")
-
-        //asking permission to use a media input to record current tab
-        const stream = await navigator.mediaDevices.getDisplayMedia({preferCurrentTab:true});
-        const video = document.createElement("video");
-
-        video.addEventListener("loadedmetadata", () =>{
-            const canvas = document.createElement("canvas");
-            const ctx = canvas.getContext("2d")
-
-            //passing video width & height as canvas width & height
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight
-
-            //playing the video so the drawn image won't be black or blank
-            video.play()
-
-            //drawing an image from captured video stream
-            ctx.drawImage(video,0,0,canvas.width, canvas.height)
-            
-            //terminating first video track of the stream
-            stream.getVideoTracks()[0].stop();
-
-            //sharing image
-            shareCanvasAsImage(canvas.toDataURL('image/jpeg', 1), "test");
-
-            //show share button when done
-            shareButton.classList.remove("hidden")
-        })
-        //passing capture stream data as video source object
-        video.srcObject = stream;
-        console.log(stream)
-    } catch{
-        console.log("error")
-    }
+    
 }
 
 async function shareCanvasAsImage(base64) {
@@ -109,5 +145,5 @@ async function shareCanvasAsImage(base64) {
 
 
 function share() {
-	takeScreenshot()
+	generateScreenshot()
 }
