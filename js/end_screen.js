@@ -16,13 +16,13 @@ function randomiseQuote(){
 
     quote.src = quotes[randomQutoIndex]
 }
+generateScreenshot()
 
 function generateScreenshot()
 {
 
     
     const myCanvas = document.createElement("canvas");
-  
 
     let image = new Image();
 
@@ -73,10 +73,10 @@ function generateScreenshot()
             console.log(myCanvas.style.height  + " WIEHEDTH")
 
             //console.log(canvas.offsetHeight)
-            ctx.drawImage(image3, parseInt(ctx.canvas.style.width.replace("px", "")) /2.05, 0 + 10
-
-                , window.innerWidth/3.7,
-                window.innerHeight / 11);
+            ctx.drawImage(image3, parseInt(ctx.canvas.style.width.replace("px", "")) /4, 
+            parseInt(ctx.canvas.style.width.replace("px", "")) /2.5
+                , window.innerWidth * 2.5 ,
+                window.innerHeight);
             // Convert canvas data to url
 
 
@@ -90,7 +90,9 @@ function generateScreenshot()
 
         //shareCanvasAsImage(myCanvas.toDataURL('image/jpeg', 0.8));
 
-        base64 = myCanvas.toDataURL('image/jpeg', 0.8);
+        setTimeout(() =>{
+            base64 = myCanvas.toDataURL('image/jpeg', 0.8);
+        },1000)
 
         console.log("loaded")
 
@@ -145,5 +147,5 @@ async function shareCanvasAsImage(base64) {
 
 
 function share() {
-	generateScreenshot()
+	shareCanvasAsImage(base64, 0.8);
 }
