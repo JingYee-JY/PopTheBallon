@@ -1,5 +1,4 @@
 const endScreen = document.getElementById('end_screen');
-const gamePage = document.getElementById('game_screen');
 const help = document.getElementById('help');
 const quoteCard = document.getElementById('quote');
 
@@ -7,6 +6,7 @@ var d = document.getElementById('balloon');
 var cStyle = getComputedStyle(d);
 var counter = 0;
 var size = 250;
+var muted;
 
 // for starting the confetti
 const start = () => {
@@ -24,8 +24,10 @@ const stop = () => {
 
 // play inflate sound 
 function playInflate(){
-    var audio = document.getElementById('inflate');
-    audio.play();
+    if(!muted){
+        var audio = document.getElementById('inflate');
+        audio.play();
+    }
 }
 
 // stop inflate sound 
@@ -36,14 +38,25 @@ function stopInflate(){
 
 // play pop sound
 function playPop(){
-    var audio = document.getElementById('pop');
-    audio.play();
+    if(!muted){
+        var audio = document.getElementById('pop');
+        audio.play();
+    }
 }
 
 // stop pop sound 
 function stopPop(){
-    var audio = document.getElementById('pop');
-    audio.pause();
+    if(!muted){
+        var audio = document.getElementById('pop');
+        audio.pause();
+    }
+}
+
+// mute sound 
+function muteSound(){
+    muted = true;
+    document.getElementById('pop').mute = true;
+    document.getElementById('inflate').mute = true;;
 }
 
 //// card block show 
@@ -75,18 +88,18 @@ function increaseSize(){
         document.getElementById('inflate').mute = true;
         stopInflate();
         const element = document.getElementById('ball')
-        element.classList.add('animate__animated', 'animate__bounceOut');
+        element.classList.add('bubble-pop');
         start();
         setTimeout(()=>{
             endScreen.classList.remove("hide")
-            gamePage.classList.add("hide")
+            gameScreen.classList.add("hide")
         },1000)
         stop();        
     }else{
         counter ++;
         help.classList.add("hide")
-        document.getElementById("ball").style.width = size + 'px';
         size = size + 5; 
+        document.getElementById("ball").style.width = size + 'px';
         playInflate();
     }
 }

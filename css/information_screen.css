@@ -1,0 +1,38 @@
+#picture{
+    width: 100%;
+    height: auto;
+}
+
+#info{
+    width: 80%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#info h1{
+    text-align: center;
+    color: var(--darkBlue);
+    margin: 0;
+}
+
+#info p{
+    margin: 0;
+    font-family: 'GothamBook';
+}
+
+#details{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+#details img{
+    width: 10%;
+}
+
+#texts p{
+    margin: 0%;
+}

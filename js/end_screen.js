@@ -1,3 +1,5 @@
+const informationScreen = document.getElementById('information_screen')
+
 const shareButton = document.getElementById('share')
 
 const canvas = document.getElementById('screenshot')
@@ -31,8 +33,8 @@ function generateScreenshot()
     image.onload = function () {
         
         const ctx =  myCanvas.getContext("2d");
-        myCanvas.width = 375;
-        myCanvas.height = 373;
+        myCanvas.width = 1500;
+        myCanvas.height = 1492;
 
 
         ctx.drawImage(image, 0, 0);
@@ -40,28 +42,9 @@ function generateScreenshot()
         base64 = myCanvas.toDataURL('image/jpeg', 0.8);
 
         var image2 = new Image();
-        image2.src = "./img/splash_screen/client.svg";
-
-        var image3 = new Image();
-        image3.src = quotes[randomQutoIndex];
+        image2.src = quotes[randomQutoIndex];
 
         image2.onload = function ()
-        {
-            myCanvas.style.height =
-                (myCanvas.height / 1.3) + "px";
-
-            myCanvas.style.width =
-                (myCanvas.width / 1.3) + "px";
-
-                console.log(myCanvas.style.height  + " WIEHEDTH")
-
-            //console.log(canvas.offsetHeight)
-            ctx.drawImage(image2,parseInt(ctx.canvas.style.width.replace("px", "")) /2 + 70, 30
-            , window.innerWidth /2,
-            window.innerHeight / 5);
-        }
-
-        image3.onload = function ()
         {
 
             myCanvas.style.height =
@@ -73,10 +56,10 @@ function generateScreenshot()
             console.log(myCanvas.style.height  + " WIEHEDTH")
 
             //console.log(canvas.offsetHeight)
-            ctx.drawImage(image3, parseInt(ctx.canvas.style.width.replace("px", "")) /4, 
-            parseInt(ctx.canvas.style.width.replace("px", "")) /2.5
-                , window.innerWidth * 2.5 ,
-                window.innerHeight);
+            ctx.drawImage(image2, parseInt(ctx.canvas.style.width.replace("px", "") / 25), 
+            parseInt(ctx.canvas.style.width.replace("px", "")) /4.8
+                , window.innerWidth * 3.8,
+                window.innerHeight * 1.8);
             // Convert canvas data to url
 
 
@@ -148,4 +131,10 @@ async function shareCanvasAsImage(base64) {
 
 function share() {
 	shareCanvasAsImage(base64, 0.8);
+}
+
+function next(){
+    endScreen.classList.add("hide")
+    
+    informationScreen.classList.remove("hide")
 }
