@@ -8,7 +8,14 @@ const quote = document.getElementById('quote')
 
 let quotes = ['./img/end_screen/quote.png',
             './img/end_screen/quote1.png',
-            './img/end_screen/quote2.png',]
+            './img/end_screen/quote2.png',
+            './img/end_screen/quote3.png',
+            './img/end_screen/quote4.png',
+            './img/end_screen/quote5.png',
+            './img/end_screen/quote6.png',
+            './img/end_screen/quote7.png',
+            './img/end_screen/quote8.png',
+            './img/end_screen/quote9.png']
 
 randomiseQuote()
 
