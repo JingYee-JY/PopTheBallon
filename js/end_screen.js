@@ -56,7 +56,7 @@ function generateScreenshot()
             console.log(myCanvas.style.height  + " WIEHEDTH")
 
             //console.log(canvas.offsetHeight)
-            ctx.drawImage(image2, parseInt(ctx.canvas.style.width.replace("px", "") / 25), 
+            ctx.drawImage(image2, parseInt(ctx.canvas.style.width.replace("px", "") / 30), 
             parseInt(ctx.canvas.style.width.replace("px", "")) /4.8
                 , window.innerWidth * 3.8,
                 window.innerHeight * 1.8);
