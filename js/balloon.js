@@ -88,6 +88,7 @@ function increaseSize(){
         document.getElementById('inflate').mute = true;
         stopInflate();
         const element = document.getElementById('ball')
+        //element.classList.add('animate__animated', 'animate__bounceOut');
         element.classList.add('bubble-pop');
         start();
         setTimeout(()=>{
