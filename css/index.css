@@ -9,10 +9,24 @@ html, body {
     background-color: var(--bg-blue);
 }
 
+*{
+    font-family:'Rubik', sans-serif;;
+}
+
+@font-face {
+    font-family: RubikBold;
+    src: url(../font/head/Rubik-Bold.ttf);
+}
+
+@font-face {
+    font-family: GothamBook;
+    src: url(../font/body/GothamBook.ttf);
+}
+
 :root {
-    --bg-blue: #C1DDFF;
-    --play-button:#FFAD2D;
-    --play-button-text:#4E2F00;
+    --bg-blue: #EAF6F8;
+    --darkBlue:#2B4B77;
+    --buttoText:#22555E;
     --button-shadow:rgb(0,0,0,0.1)
 }
 
@@ -32,7 +46,10 @@ html, body {
     transition: opacity 1s linear;
 }
 
-#splash_screen {
+#splash_screen,
+#instruction_screen,
+#game_screen,
+#end_screen {
 
     width: 100%;
     height: 100%;
@@ -41,30 +58,48 @@ html, body {
 
     background-color: var(--bg-blue);
 
+    
 
+
+}
+
+#splash_screen{
+    background-image: url(../img/splash_screen/bottom.png);
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+#instruction_screen{
+    background-image: url("../img/instruction_screen/bottom2.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+}
+
+#game_screen{
+    background-image: url("../img/game_screen/bottom3.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+}
+
+#end_screen{
+    gap: 10px;
+    background-image: url("../img/end_screen/bottom4.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
 }
 
 #instruction_screen,
 #game_screen,
+#game_screen,
 #end_screen{
-
-    width: 100%;
-    height: 100%;
-    background-image: url("../img/instruction_screen/background.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    overflow: hidden;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-#game_screen{
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 40px;
 }
 

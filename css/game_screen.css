@@ -12,13 +12,32 @@
     padding: 20px;
 }
 
+#mute{
+    width: 25%;
+    height: auto;
+    position: absolute;
+    
+    top:8%;
+  
+    left: 15%; /* position the left edge of the element at the middle of the parent */
+
+    transform: translate(-50%, -50%); /* This is a shorthand of
+                                         translateX(-50%) and translateY(-50%) */
+}
+
 #instruc{
-    font-size: 20px;
+    font-size: 18px;
+    color: var(--darkBlue);
+}
+#balloon{
+    position: relative;
 }
 
 #help{
     position: absolute;
     width: 15%;
+    z-index: 10;
+    bottom: 15%;
     pointer-events: none;
 }
 

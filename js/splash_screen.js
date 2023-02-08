@@ -36,7 +36,7 @@ function onLoadSplash()
         splashScreen.classList.add("fade");
   
 
-        var delayInMilliseconds = 1400;
+        var delayInMilliseconds = 2100;
 
         setTimeout(function() {
             //your code to be executed after 1 second
@@ -45,9 +45,9 @@ function onLoadSplash()
 
             instructionScreen.classList.add("visible");
 
-            document.documentElement.style.background = "#C1DDFF";
+            document.documentElement.style.background = "#EAF6F8";
 
-            document.body.style.background = "#C1DDFF";
+            document.body.style.background = "#EAF6F8";
             
        
     

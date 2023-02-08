@@ -1,11 +1,19 @@
 #cards{
     width: 100%;
     height: auto;
+    position: relative;
 }
 
 #cards img{
-    width: 80%;
+    width: 95%;
     height: auto;
+}
+
+#share{
+    width: 23% !important;
+    position: absolute;
+    bottom: 5%;
+    right: 6%;
 }
 
 .hidden{

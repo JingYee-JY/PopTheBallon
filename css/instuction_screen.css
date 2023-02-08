@@ -8,38 +8,40 @@
     gap: 10px;
 }
 
-#title{
-    width: 60%;
-    background-color: white;
-    box-shadow: 10px 10px #FFCF84;
-    border-radius: 5px;
-    padding: 15px 0px;
-}
-
 h1{
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: 900;
+    color: #57ADB9;
 }
 
 p{
-    font-size: 18px;
+    font-size: 16px;
+    color: var(--darkBlue);
 }
 
 #instructions_details{
     padding: 10px 0px;
     border-radius: 10px;
-    background-color: white;
     width: 90%;
     text-align: center;
 }
 
 #play_button{
     width: 90%;
-    border-radius: 10px;
-    padding: 15px;
+    padding: 20px;
     border: 0px;
     font-size: 20px;
     font-weight: 600;
-    margin-top: 20px;
-    color: var(--play-button-text);
-    background-color: var(--play-button);
+    background-color: transparent;
+    color: var(--buttonText);
+    background-image: url(../img/instruction_screen/button.png);
+    background-size: 100% 100%;
+    position: absolute;
+    
+    bottom: 6%;
+  
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+
+    transform: translate(-50%, -50%); /* This is a shorthand of
+                                         translateX(-50%) and translateY(-50%) */
 }

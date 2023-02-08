@@ -6,7 +6,7 @@ const quoteCard = document.getElementById('quote');
 var d = document.getElementById('balloon');
 var cStyle = getComputedStyle(d);
 var counter = 0;
-var size = 180;
+var size = 250;
 
 // for starting the confetti
 const start = () => {
@@ -86,7 +86,7 @@ function increaseSize(){
         counter ++;
         help.classList.add("hide")
         document.getElementById("ball").style.width = size + 'px';
-        size = size + 10; 
+        size = size + 5; 
         playInflate();
     }
 }

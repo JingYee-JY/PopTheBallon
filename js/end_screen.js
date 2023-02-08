@@ -26,13 +26,13 @@ function generateScreenshot()
 
     let image = new Image();
 
-    image.src = './img/instruction_screen/background.png';
+    image.src = './img/end_screen/screenshotBackground.png';
 
     image.onload = function () {
         
         const ctx =  myCanvas.getContext("2d");
-        myCanvas.width = 1500;
-        myCanvas.height = 1492;
+        myCanvas.width = 375;
+        myCanvas.height = 373;
 
 
         ctx.drawImage(image, 0, 0);

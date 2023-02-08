@@ -9,7 +9,8 @@
                                          translateX(-50%) and translateY(-50%) */
 }
 
-#client_logo{
+#client_logo,
+#client_logo_smaller{
     position: absolute;
     
     top:6%;
@@ -20,20 +21,24 @@
                                          translateX(-50%) and translateY(-50%) */
 }
 
+#client_logo_smaller{
+    width: 40%;
+    top: 8%;
+    height: auto;
+}
+
 #splash_image {
     
-    height: 400px;
-    width: 400px;
-    
+    max-height: 400px;
+    max-width: 400px;
 
-    
 }
 
 #gimme_logo {
 
     position: absolute;
     
-    bottom: 2%;
+    bottom: -1%;
   
     left: 50%; /* position the left edge of the element at the middle of the parent */
 
