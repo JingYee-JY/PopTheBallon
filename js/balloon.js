@@ -90,7 +90,8 @@ function increaseSize(){
         const element = document.getElementById('ball')
         //element.classList.add('animate__animated', 'animate__bounceOut');
         element.classList.add('bubble-pop');
-        start();
+        //start();
+        createBubble();
         setTimeout(()=>{
             endScreen.classList.remove("hide")
             gameScreen.classList.add("hide")

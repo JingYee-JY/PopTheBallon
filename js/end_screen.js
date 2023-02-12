@@ -145,3 +145,7 @@ function next(){
     
     informationScreen.classList.remove("hide")
 }
+
+function link(){
+    window.open('https://go.gov.sg/projectreground', '_blank');
+}

@@ -15,11 +15,14 @@
 #info h1{
     text-align: center;
     color: var(--darkBlue);
+    font-size: 25px;
     margin: 0;
 }
 
 #info p{
     margin: 0;
+    font-weight: 100;
+    color: var(--darkBlue);
     font-family: 'GothamBook';
 }
 

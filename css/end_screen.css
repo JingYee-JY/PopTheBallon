@@ -2,6 +2,7 @@
     width: 100%;
     height: auto;
     position: relative;
+    z-index: 12;
 }
 
 #cards img{
@@ -10,7 +11,7 @@
 }
 
 #share{
-    width: 23% !important;
+    width: 21% !important;
     position: absolute;
     bottom: 5%;
     right: 6%;

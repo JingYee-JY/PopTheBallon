@@ -5,32 +5,32 @@
     align-items: center;
     text-align: center;
     width: 100%;
-    gap: 10px;
+    gap: 30px;
 }
 
-h1{
+#instuctions img{
+    width: 90%;
+}
+
+#instuctions h1{
+    margin: 0px;
     font-size: 25px;
     font-weight: 900;
     color: #57ADB9;
 }
 
-p{
+#instuctions p{
+    margin: 0px;
     font-size: 16px;
     color: var(--darkBlue);
-}
-
-#instructions_details{
-    padding: 10px 0px;
-    border-radius: 10px;
-    width: 90%;
-    text-align: center;
+    font-family: "GothamBook";
 }
 
 #play_button,
 #next_button,
 #more_button{
-    width: 90%;
-    padding: 20px;
+    width: 70%;
+    padding: 15px;
     border: 0px;
     font-size: 20px;
     font-weight: 600;
@@ -39,7 +39,7 @@ p{
     background-image: url(../img/instruction_screen/button.png);
     background-size: 100% 100%;
     position: absolute;
-    
+    z-index: 12;
     bottom: 3%;
   
     left: 50%; /* position the left edge of the element at the middle of the parent */
