@@ -20,9 +20,9 @@ html, body {
 
 @font-face {
     font-family: "GothamBook";
-    src: url('ff/Gotham-Book.woff') format('woff'),
-         url('ff/Gotham-Book.woff2') format('woff2'),
-         url('ff/Gotham-Book.ttf') format('truetype');
+    src: url('../font/body/Gotham-Book.woff') format('woff'),
+         url('../font/body/Gotham-Book.woff2') format('woff2'),
+         url('../font/body/Gotham-Book.ttf') format('truetype');
     font-weight: normal;
   }
 
