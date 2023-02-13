@@ -19,9 +19,12 @@ html, body {
 }
 
 @font-face {
-    font-family: GothamBook;
-    src: url("../font/body/GothamBook.ttf");
-}
+    font-family: "GothamBook";
+    src: url('ff/Gotham-Book.woff') format('woff'),
+         url('ff/Gotham-Book.woff2') format('woff2'),
+         url('ff/Gotham-Book.ttf') format('truetype');
+    font-weight: normal;
+  }
 
 :root {
     --bg-blue: #EAF6F8;
