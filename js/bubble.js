@@ -1,6 +1,7 @@
 let spawnbubble;
 let startingBubble = 0
 let numberOfBubble = 30;
+let once = false;
 
 function createBubble(){
     console.log(startingBubble, numberOfBubble)
@@ -12,7 +13,7 @@ function createBubble(){
         createElement.classList.add("bubble")
         createElement.style.width = 20 + size + "px"
         createElement.style.height = 20 + size + "px"
-        createElement.style.left = Math.random() * innerWidth + "px"
+        createElement.style.left = Math.random() * (innerWidth - 40 - size - size) + 20 + size + "px"
         console.log(endScreen)
         endScreen.appendChild(createElement);
     
@@ -20,7 +21,10 @@ function createBubble(){
             createElement.remove()
         },6000)
 
-        spawnbubble = setInterval(createBubble, 50)
+        if(!once){
+            once = true
+            spawnbubble = setInterval(createBubble, 50)
+        }
     }
     else{
         clearInterval(spawnbubble)
