@@ -29,7 +29,7 @@ html, body {
 :root {
     --bg-blue: #EAF6F8;
     --darkBlue:#2B4B77;
-    --buttoText:#22555E;
+    --buttonText:#22555E;
     --button-shadow:rgb(0,0,0,0.1)
 }
 
@@ -97,12 +97,7 @@ html, body {
 }
 
 #information_screen{
-    background-image: url("../img/information_screen/bottom5.png");
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: 100%;
-
-    gap: 10px;
+    gap: 20px;
     justify-content: flex-start !important;
 }
 
@@ -116,5 +111,56 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#information_screen{
+    overflow-y: scroll;
+    gap: 25px;
+}
+
+#play_button,
+#next_button{
+    width: 75%;
+    padding: 20px;
+    border: 0px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: transparent;
+    color: var(--buttonText);
+    background-image: url(../img/instruction_screen/button.png);
+    background-size: 100% 100%;
+    position: absolute;
+    z-index: 12;
+    bottom: 3%;
+  
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+
+    transform: translate(-50%, -50%); /* This is a shorthand of
+                                         translateX(-50%) and translateY(-50%) */
+}
+
+#more_button{
+    width: 75%;
+    padding: 20px;
+    border: 0px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--buttonText);
+    background-color: transparent;
+    background-image: url(../img/instruction_screen/button.png);
+    background-size: 100% 100%;
+    position: relative;
+    z-index: 12;
+    margin-bottom: 10%;
+}
+
+
+#emtpy{
+    width: 75%;
+    padding: 20px;
+    border: 0px;
+    font-size: 18px;
+    font-weight: 600;
+    visibility: hidden;
 }
 

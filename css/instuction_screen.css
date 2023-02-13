@@ -25,25 +25,3 @@
     color: var(--darkBlue);
     font-family: "GothamBook";
 }
-
-#play_button,
-#next_button,
-#more_button{
-    width: 70%;
-    padding: 15px;
-    border: 0px;
-    font-size: 20px;
-    font-weight: 600;
-    background-color: transparent;
-    color: var(--buttonText);
-    background-image: url(../img/instruction_screen/button.png);
-    background-size: 100% 100%;
-    position: absolute;
-    z-index: 12;
-    bottom: 3%;
-  
-    left: 50%; /* position the left edge of the element at the middle of the parent */
-
-    transform: translate(-50%, -50%); /* This is a shorthand of
-                                         translateX(-50%) and translateY(-50%) */
-}
