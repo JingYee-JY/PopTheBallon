@@ -15,12 +15,12 @@ html, body {
 
 @font-face {
     font-family: RubikBold;
-    src: url(../font/head/Rubik-Bold.ttf);
+    src: url("../font/head/Rubik-Bold.ttf");
 }
 
 @font-face {
     font-family: GothamBook;
-    src: url(../font/body/GothamBook.ttf);
+    src: url("../font/body/GothamBook.ttf");
 }
 
 :root {
@@ -65,7 +65,7 @@ html, body {
 }
 
 #splash_screen{
-    background-image: url(../img/splash_screen/bottom.png);
+    background-image: url("../img/splash_screen/bottom.png");
     background-size: 100%;
     background-position: bottom;
     background-repeat: no-repeat;
