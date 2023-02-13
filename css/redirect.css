@@ -1,37 +1,354 @@
-body{
-    width: 100%;
-    height: 100vh;
-    padding: 0px;
-    margin: 0px;
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
 }
 
-.redirectBackground{
-    width: 100%;
-    height: 100%;
-    background-image: url("../img/redirect/popUpBackground.png");
-    background-size: 100% 100%;
-    display: flex;
-    justify-content: center;
+.content{
+    background-color: #FF7300;
+    width:50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+    padding: 2% 3%;
+    border-radius: 20px;
+    border: 2px solid white;
+    background-image: url('../img/redirect/popUp.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-size: 40%;
+    padding-right: 3%;
+}
+
+.row{
     align-items: center;
 }
-
-.PopUp{
-    width: 30%;
-    background-image: url("../img/redirect/popUp.png");
-    background-size: 100% 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    padding: 20px;
-    align-items: center;
-}
-
-.PopUp p{
-    margin: 0px;
-    font-size: 18px;
+.text{
+    font-family: 'Poppins';
     color: white;
+    font-size: 20px;
+    width: 50%;
+    /* border: 2px solid green; */
+    /*margin-top: 12%;
+    margin-left: 8%;
+    margin-right: 0%;*/
+    /* padding-left: 15%; */
 }
 
-.PopUp img{
-    width: 40%;
+.mobile{
+    font-weight: bold;
+}
+
+/* gimme main css */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 95vh;
+    width: 100%;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 600;
+    color: #FFA500;
+}
+
+a {
+    color: #FFA500;
+}
+
+.logo {
+    /* margin-top: 30px; */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: relative;
+    top: 30px;
+}
+
+.logo img {
+    max-width: 250px;
+}
+
+.background-text {
+    width: 100%;
+    position: absolute;
+    left: -10%;
+    padding-right: 10%;
+    z-index: -1;
+    font-size: 35vw;
+    white-space: nowrap;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #DDDDDD;
+    overflow-x: hidden;
+    top: -5%;
+}
+
+.cont {
+    max-width: 85%;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+}
+
+.contenty {
+    font-size: calc(28px + 6 * ((100vw - 320px) / 680));
+    color: rgba(102, 102, 102, 1);
+    line-height: 1.1;
+    padding-top: 50px;
+    padding-left: -35px;
+}
+
+.contenty h2 {
+    text-shadow: 0px 8px 8px rgba(0, 0, 0, 0.04);
+}
+
+footer {
+    position: absolute;
+    left: 7.5%;
+}
+
+footer p {
+    font-size: 12px;
+    color: #666666;
+}
+
+footer a {
+    color: #666666;
+}
+
+/*drag*/
+.drag {
+    position: absolute;
+    right: 20%;
+    top: 30%;
+    -webkit-animation: jittery 4s infinite;
+            animation: jittery 4s infinite;
+}
+
+.drag img {
+    max-width: 200px;
+
+}
+
+/*responsive*/
+@media screen and (max-width:767px) {
+    .background-text {
+        top: 20%;
+    }
+
+    .drag {
+        right: auto;
+        left: 10%;
+        top: 60%;
+    }
+
+    .drag img {
+        max-width: 160px;
+    }
+
+    .background-text {
+        font-size: 50vw;
+        /* padding-right: 20%; */
+    }
+
+    .content h2 {
+        font-size: 42px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+	button{
+		width: 100%;
+		padding: 20px 30px;
+		bottom: -80px;
+		border-radius: 60px;
+	}
+	
+}
+
+@media screen and (max-width:375px) {
+    .drag {
+        right: auto;
+        top: 60%;
+        left: 10%;
+    }
+
+    .content h2 {
+        font-size: 36px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+    .background-text {
+        top: 20%;
+    }
+
+    .contact-form {
+        margin-top: 30px;
+    }
+
+    .drag {
+        right: 5%;
+        top: 10%;
+    }
+}
+
+@media screen and (min-width:1500px) {
+    .background-text {
+        top: -10%;
+    }
+
+    .contact-form {
+        margin-top: 30px;
+    }
+
+}
+
+@media screen and (min-width:1700px) {
+    .background-text {
+        top: -10%;
+    }
+
+    .contact-form {
+        margin-top: 100px;
+    }
+}
+
+@media screen and (min-width:2100px) {
+    .background-text {
+        top: -15%;
+    }
+
+    .contact-form {
+        margin-top: 110px;
+    }
+}
+
+@media screen and (min-width:2800px) {
+    .background-text {
+        top: -15%;
+    }
+
+    .contact-form {
+        margin-top: 280px;
+    }
+}
+
+@media screen and (min-width:4000px) {
+    .background-text {
+        top: -20%;
+    }
+
+    .contact-form {
+        margin-top: 480px;
+    }
+}
+
+@-webkit-keyframes jittery {
+
+    5%,
+    50% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+
+    10% {
+        -webkit-transform: scale(0.9);
+                transform: scale(0.9);
+    }
+
+    15% {
+        -webkit-transform: scale(1.15);
+                transform: scale(1.15);
+    }
+
+    20% {
+        -webkit-transform: scale(1.15) rotate(-5deg);
+                transform: scale(1.15) rotate(-5deg);
+    }
+
+    25% {
+        -webkit-transform: scale(1.15) rotate(5deg);
+                transform: scale(1.15) rotate(5deg);
+    }
+
+    30% {
+        -webkit-transform: scale(1.15) rotate(-3deg);
+                transform: scale(1.15) rotate(-3deg);
+    }
+
+    45% {
+        -webkit-transform: scale(1.15) rotate(2deg);
+                transform: scale(1.15) rotate(2deg);
+    }
+
+    60% {
+        -webkit-transform: scale(1.15) rotate(0);
+                transform: scale(1.15) rotate(0);
+    }
+}
+
+@keyframes jittery {
+
+    5%,
+    50% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+
+    10% {
+        -webkit-transform: scale(0.9);
+                transform: scale(0.9);
+    }
+
+    15% {
+        -webkit-transform: scale(1.15);
+                transform: scale(1.15);
+    }
+
+    20% {
+        -webkit-transform: scale(1.15) rotate(-5deg);
+                transform: scale(1.15) rotate(-5deg);
+    }
+
+    25% {
+        -webkit-transform: scale(1.15) rotate(5deg);
+                transform: scale(1.15) rotate(5deg);
+    }
+
+    30% {
+        -webkit-transform: scale(1.15) rotate(-3deg);
+                transform: scale(1.15) rotate(-3deg);
+    }
+
+    45% {
+        -webkit-transform: scale(1.15) rotate(2deg);
+                transform: scale(1.15) rotate(2deg);
+    }
+
+    60% {
+        -webkit-transform: scale(1.15) rotate(0);
+                transform: scale(1.15) rotate(0);
+    }
 }

@@ -4,15 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pop the Ballon</title>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://unpkg.com/vue@next"></script>
     <link rel="stylesheet" href="./css/redirect.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 </head>
 <body>
-    <div class="redirectBackground">
-        <div class="PopUp">
-            <img src="./img/redirect/qrcode.png">
-            <p>For the best experience, <br> 
-                please scan using your<br> <b>mobile phone.<b></p>
+    <div id="overlay" style="display: block;">
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-5">
+                        <img src="./img/redirect/qrcode.png" width="100%">
+                    </div>
+                    <div class="col-7 text">
+                        For the best experience, please scan using your
+                        <br>
+                        <span class="mobile">mobile phone.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="logo">
+        <img src="./img/redirect/logo.png" alt="GIMME Logo">
+    </div>
+
+    <div class="background-text"> GIMME</div>
+
+    <div class="drag">
+        <a href="https://gimme.sg/contact.html">
+            <img src="img/redirect/behindLogo.png" alt="">
+        </a>
+    </div>
+
+    <div class="container count">
+        <div class="contenty">
+            <h2 style="font-size: 60px;">
+            An awesome
+            <br>
+            new experience
+            <br>
+            is coming to town.
+            <br>
+            Stay tuned!
+            </h2>
         </div>
     </div>
 </body>
