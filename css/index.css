@@ -115,7 +115,7 @@ html, body {
 
 #information_screen{
     overflow-y: scroll;
-    gap: 25px;
+    gap: 40px;
 }
 
 #play_button,
@@ -151,7 +151,7 @@ html, body {
     background-size: 100% 100%;
     position: relative;
     z-index: 12;
-    margin-bottom: 10%;
+    margin-bottom: 30%;
 }
 
 
