@@ -7,6 +7,5 @@ function load(){
     instructionPage.classList.remove("visible");
     
     gameScreen.classList.remove("hide")
-    backgroundImage.style.backgroundImage = 'url("./img/rotate/gameScreen.png")'
 }
 

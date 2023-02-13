@@ -144,8 +144,6 @@ function next(){
     endScreen.classList.add("hide")
     
     informationScreen.classList.remove("hide")
-
-    backgroundImage.style.backgroundImage = 'url("./img/rotate/informationScreen.png")'
 }
 
 function link(){

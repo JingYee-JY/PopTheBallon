@@ -95,7 +95,6 @@ function increaseSize(){
         setTimeout(()=>{
             endScreen.classList.remove("hide")
             gameScreen.classList.add("hide")
-            backgroundImage.style.backgroundImage = 'url("./img/rotate/qutoScreen.png")'
         },1000)
         stop();        
     }else{
