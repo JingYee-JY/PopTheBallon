@@ -4,7 +4,6 @@ html, body, img{
     touch-action: manipulation;
 }
 body{
-    background-image: url('./img/BG.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
