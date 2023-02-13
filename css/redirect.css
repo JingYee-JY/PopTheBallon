@@ -1,4 +1,37 @@
+body{
+    width: 100%;
+    height: 100vh;
+    padding: 0px;
+    margin: 0px;
+}
+
 .redirectBackground{
+    width: 100%;
+    height: 100%;
     background-image: url("../img/redirect/popUpBackground.png");
     background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PopUp{
+    width: 30%;
+    background-image: url("../img/redirect/popUp.png");
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+}
+
+.PopUp p{
+    margin: 0px;
+    font-size: 18px;
+    color: white;
+}
+
+.PopUp img{
+    width: 40%;
 }

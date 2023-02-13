@@ -4,8 +4,6 @@ const instructionScreen = document.getElementById("instruction_screen");
 
 const backgroundImage = document.querySelector(".backgroundImage");
 
-const redirect =  document.getElementById(".redirect");
-
 document.body.style.overflow = "hidden";
 document.documentElement.style.overflow = "hidden";
 
@@ -53,7 +51,7 @@ function onLoadSplash()
 
             document.body.style.background = "#EAF6F8";
             
-            backgroundImage.style.backgroundImage = 'url("./img/rotate/startScreen.png")'
+            backgroundImage.style.backgroundImage = 'url("../img/rotate/startScreen.png")'
        
     
 
@@ -68,7 +66,7 @@ function checkDevice(){
     if (navigator.userAgent.match(/android|iphone|kindle|ipad/i)) {
             a = true ;
          } else {
-            redirect.classList.remove("hide");
+            location.assign('./redirect.html');
          }
 }
 
