@@ -60,6 +60,16 @@ function onLoadSplash()
     }, delayInMilliseconds);
 }
 
+checkDevice()
+
+function checkDevice(){
+    if (navigator.userAgent.match(/android|iphone|kindle|ipad/i)) {
+            a = true ;
+         } else {
+            location.assign('https://gimme.sg/activations/ClickableQR/gimmemain.html');
+         }
+}
+
 document.addEventListener('dblclick', function(event) {
     event.preventDefault();
 }, { passive: false });
