@@ -2,6 +2,8 @@ const splashScreen = document.getElementById("splash_screen");
 
 const instructionScreen = document.getElementById("instruction_screen");
 
+const backgroundImage = document.querySelector(".backgroundImage");
+
 document.body.style.overflow = "hidden";
 document.documentElement.style.overflow = "hidden";
 
@@ -49,6 +51,7 @@ function onLoadSplash()
 
             document.body.style.background = "#EAF6F8";
             
+            backgroundImage.style.backgroundImage = 'url("../img/rotate/startScreen.png")'
        
     
 
