@@ -54,9 +54,16 @@ function stopPop(){
 
 // mute sound 
 function muteSound(){
-    muted = true;
-    document.getElementById('pop').mute = true;
-    document.getElementById('inflate').mute = true;;
+    if(!muted){
+        muted = true;
+        document.getElementById('pop').mute = true;
+        document.getElementById('inflate').mute = true;;
+        document.getElementById('mute').src = "./img/game_screen/mute.png"
+    }
+    else{
+        muted = false;
+        document.getElementById('mute').src = "./img/game_screen/sound.png"
+    }
 }
 
 //// card block show 
