@@ -21,7 +21,7 @@
 
 #instuctions p{
     margin: 0px;
-    font-size: 16px;
+    font-size: 5vw;
     color: var(--darkBlue);
     font-family: "GothamBook";
 }

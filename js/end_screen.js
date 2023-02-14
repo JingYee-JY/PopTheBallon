@@ -63,10 +63,10 @@ function generateScreenshot()
             console.log(myCanvas.style.height  + " WIEHEDTH")
 
             //console.log(canvas.offsetHeight)
-            ctx.drawImage(image2, parseInt(ctx.canvas.style.width.replace("px", "") / 30), 
-            parseInt(ctx.canvas.style.width.replace("px", "")) /4.8
-                , window.innerWidth * 3.8,
-                window.innerHeight * 1.8);
+            ctx.drawImage(image2, parseInt(ctx.canvas.style.width.replace("px", "") / 15), 
+            parseInt(ctx.canvas.style.width.replace("px", "")) /4.5
+                , myCanvas.width * 0.9,
+                myCanvas.height * 0.75);
             // Convert canvas data to url
 
 
