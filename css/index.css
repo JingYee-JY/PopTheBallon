@@ -113,6 +113,10 @@ html, body {
     align-items: center;
 }
 
+#game_screen{
+    justify-content: flex-start;
+}
+
 #information_screen{
     overflow-y: scroll;
     gap: 40px;

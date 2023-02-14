@@ -5,20 +5,21 @@
 
 .background{
     width: 100%;
+    position: relative;
     height: 100%;
     display: flex;
+    z-index: 10;
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    justify-content: center;
-    background: url(../img/information_screen/bottom5.png);
-    background-size: 100% 100%;
+    justify-content: flex-start;
 }
 
 #info{
     width: 80%;
     text-align: left;
     display: flex;
+    z-index: inherit;
     flex-direction: column;
     gap: 25px;
 }
@@ -26,14 +27,14 @@
 #info h1{
     text-align: left;
     color: var(--buttonText);
-    font-size: 25px;
+    font-size: 6.7vw;
     margin: 0px;
 }
 
 #info p{
     margin: 0px;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 4.2vw;
     color: var(--darkBlue);
     font-family: 'GothamBook';
 }
@@ -47,16 +48,17 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 10px;
+    z-index: inherit;
 }
 
 #details img{
     width: 10%;
 }
 
-#bottom{
+.bottom{
     position: absolute;
     width: 100%;
-    z-index: inherit;
+    z-index: 0;
     height: auto;
     bottom: 0;
 }

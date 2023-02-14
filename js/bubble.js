@@ -15,7 +15,7 @@ function createBubble(){
         createElement.style.height = 20 + size + "px"
         createElement.style.left = Math.random() * (innerWidth - 40 - size - size) + 20 + size + "px"
         console.log(endScreen)
-        endScreen.appendChild(createElement);
+        document.body.appendChild(createElement);
     
         setTimeout(() =>{
             createElement.remove()
