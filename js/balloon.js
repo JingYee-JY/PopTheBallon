@@ -109,6 +109,6 @@ function increaseSize(){
         help.classList.add("hide")
         size = size + 5; 
         document.getElementById("ball").style.width = size + 'px';
-        playInflate();
+        //playInflate();
     }
 }
