@@ -97,7 +97,8 @@ html, body {
 }
 
 #information_screen{
-    gap: 20px;
+    overflow-y: scroll;
+    gap: 50px;
     justify-content: flex-start !important;
 }
 
@@ -115,11 +116,6 @@ html, body {
 
 #game_screen{
     justify-content: flex-start;
-}
-
-#information_screen{
-    overflow-y: scroll;
-    gap: 40px;
 }
 
 #play_button,

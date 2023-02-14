@@ -13,13 +13,13 @@ function createBubble(){
         createElement.classList.add("bubble")
         createElement.style.width = 20 + size + "px"
         createElement.style.height = 20 + size + "px"
-        createElement.style.left = Math.random() * (innerWidth - 40 - size - size) + 20 + size + "px"
+        createElement.style.left = (Math.random() * (innerWidth - 40 - size - size)) + 20 + size + "px"
         console.log(endScreen)
         document.body.appendChild(createElement);
     
         setTimeout(() =>{
             createElement.remove()
-        },6000)
+        },3000)
 
         if(!once){
             once = true
