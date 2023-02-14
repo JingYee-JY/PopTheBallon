@@ -26,6 +26,7 @@ const stop = () => {
 function playInflate(){
     if(!muted){
         var audio = document.getElementById('inflate');
+        audio.currentTime = 0;
         audio.play();
     }
 }
@@ -109,6 +110,6 @@ function increaseSize(){
         help.classList.add("hide")
         size = size + 5; 
         document.getElementById("ball").style.width = size + 'px';
-        //playInflate();
+        playInflate();
     }
 }
