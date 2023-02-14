@@ -87,6 +87,8 @@ function muteSound(){
 //    },500);
 //};
 
+document.getElementById("inflate").preload = "auto";
+
 // increase size of balloon
 balloon.addEventListener("touchstart", () => {
     if(!muted){
