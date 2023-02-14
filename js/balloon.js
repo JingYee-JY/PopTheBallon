@@ -94,6 +94,7 @@ balloon.addEventListener("touchstart", () => {
     if(!muted){
         var audio = document.getElementById('inflate');
         audio.currentTime = 0;
+        audio.playbackRate = 1.5;
         audio.play();
     }
     if (counter == 20){
