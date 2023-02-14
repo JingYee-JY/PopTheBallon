@@ -2,8 +2,8 @@ const endScreen = document.getElementById('end_screen');
 const help = document.getElementById('help');
 const quoteCard = document.getElementById('quote');
 
-var d = document.getElementById('balloon');
-var cStyle = getComputedStyle(d);
+var balloon = document.getElementById('balloon');
+var cStyle = getComputedStyle(balloon);
 var counter = 0;
 var size = 250;
 var muted;
@@ -88,8 +88,12 @@ function muteSound(){
 //};
 
 // increase size of balloon
-function increaseSize(){ 
-
+balloon.addEventListener("touchstart", () => {
+    if(!muted){
+        var audio = document.getElementById('inflate');
+        audio.currentTime = 0;
+        audio.play();
+    }
     if (counter == 20){
         console.log('hello');
         playPop()
@@ -110,6 +114,6 @@ function increaseSize(){
         help.classList.add("hide")
         size = size + 5; 
         document.getElementById("ball").style.width = size + 'px';
-        playInflate();
+        //playInflate();
     }
-}
+})
