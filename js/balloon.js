@@ -5,7 +5,7 @@ const quoteCard = document.getElementById('quote');
 var balloon = document.getElementById('balloon');
 var cStyle = getComputedStyle(balloon);
 var counter = 0;
-var size = 250;
+var size = 200;
 var muted;
 
 // for starting the confetti
@@ -97,7 +97,7 @@ balloon.addEventListener("touchstart", () => {
         audio.playbackRate = 1.5;
         audio.play();
     }
-    if (counter == 20){
+    if (counter == 30){
         console.log('hello');
         playPop()
         document.getElementById('inflate').mute = true;
