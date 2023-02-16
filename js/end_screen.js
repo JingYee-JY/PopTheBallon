@@ -141,6 +141,10 @@ function share() {
 }
 
 function next(){
+    let bubbles = document.querySelectorAll(".bubble")
+    bubbles.forEach((b)=>{
+        b.remove()
+    })
     endScreen.classList.add("hide")
     
     informationScreen.classList.remove("hide")
