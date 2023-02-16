@@ -13,8 +13,6 @@
     align-items: center;
     gap: 35px;
     justify-content: flex-start;
-    background: url("../img/information_screen/bottom5.png") bottom no-repeat;
-    background-size: 100% 100%;
 }
 
 #info{
